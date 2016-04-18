@@ -51,13 +51,23 @@ Using this frame-based messaging system helps to reduce the amount of non-payloa
 Explain and demonstrate the process of WebSocket communication - From connecting client to server,
 through sending messages, to closing connection.
 
+See public/app.js
+
 
 What's the advantage of using libraries like Socket.IO, Sock.JS, WS, over pure WebSocket libraries in the
 backend and standard APIs on frontend? Which problems do they solve?
 
+Socket.io abstracts many transports, including AJAX long-polling and WebSockets, into a single API.
+It allows developers to send and receive data without worrying about cross-browser compatibility.
 
-What is Backend as a Service, Database as a Service, why would you consider using Firebase in your
-projects?
+Socket.IO simplifies the WebSocket API and unifies the APIs of its fallback transports. Transports include:
+
+WebSocket
+Flash Socket
+AJAX long-polling
+AJAX multipart streaming
+IFrame
+JSONP polling
 
 
 Explain the pros & cons of using a Backend as a Service Provider like Firebase.
@@ -83,7 +93,3 @@ But if you use FireBase as a backend, you empower yourself with a three way bind
 You can basically bind your model data to a FireBase location so that whenever your models change,
 those changes are automatically pushed to FireBase.
 Similarly, whenever the data at the particular FireBase location changes, your local scope model is also updated.
-
-
-Explain and demonstrate the difference between the simple chat system in your own WebSocket + Node.js
-backend vs. Firebase.

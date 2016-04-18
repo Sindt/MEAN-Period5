@@ -6,7 +6,6 @@ module.exports = function (socket) {
     }
 
     socket.on('message', function (message) {
-        console.log(message);
         broadcast('message', message);
     });
 
