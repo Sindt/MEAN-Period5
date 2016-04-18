@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-controller="mainController as main">
+<header>
+    <div class="jumbotron">
+        <h1>Chat</h1>
+    </div>
+
+</header>
+<main class="container">
+    <ul class="messages">
+        <li class="message" ng-repeat="message in main.messages"  duration="500">
+            <p>{{message.body}}</p>
+        </li>
+    </ul>
+    <form ng-submit="main.sendMessage()">
+        <div class="ten columns input-message">
+            <input type="text" ng-model="main.messageInput">
+        </div>
+        <div class="two columns">
+            <button class="button-primary">Send</button>
+        </div>
+    </form>
+</main>
+
+
+</body>
+</html>
