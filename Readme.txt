@@ -37,7 +37,16 @@ HTTP poll: connection for every message + no data messages
 
 
 Explain what the WebSocket Protocol brings to the Web-world.
+WebSockets provide a persistent connection between a client and server that both parties can use to start sending data at any time.
 
+The client establishes a WebSocket connection through a process known as the WebSocket handshake.
+This process starts with the client sending a regular HTTP request to the server.
+An Upgrade header is included in this request that informs the server that the client wishes to establish a WebSocket connection.
+
+With WebSockets you can transfer as much data as you like without incurring the overhead associated with traditional HTTP requests.
+Data is transferred through a WebSocket as messages, each of which consists of one or more frames containing the data you are sending (the payload).
+In order to ensure the message can be properly reconstructed when it reaches the client each frame is prefixed with 4-12 bytes of data about the payload.
+Using this frame-based messaging system helps to reduce the amount of non-payload data that is transferred, leading to significant reductions in latency.
 
 Explain and demonstrate the process of WebSocket communication - From connecting client to server,
 through sending messages, to closing connection.
