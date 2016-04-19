@@ -1,4 +1,5 @@
 Name attributes of HTTP protocol makes it difficult to use for real time systems.
+
 Bi-directional: HTTP is a uni-directional protocol where a request is always initiated by client,
 server processes and returns a response, and then the client consumes it.
 
@@ -25,6 +26,7 @@ the client gets the server response and sends next request to the server.
 
 Pros: you are notified WHEN the server event happens with no delay.
 Cons: more complex and more server resources used.
+
 
 What is HTTP streaming, SSE (Server sent events)?
 
@@ -62,6 +64,7 @@ With WebSockets you can transfer as much data as you like without incurring the 
 Data is transferred through a WebSocket as messages, each of which consists of one or more frames containing the data you are sending (the payload).
 In order to ensure the message can be properly reconstructed when it reaches the client each frame is prefixed with 4-12 bytes of data about the payload.
 Using this frame-based messaging system helps to reduce the amount of non-payload data that is transferred, leading to significant reductions in latency.
+
 
 Explain and demonstrate the process of WebSocket communication - From connecting client to server,
 through sending messages, to closing connection.
