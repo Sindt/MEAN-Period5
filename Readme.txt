@@ -78,6 +78,8 @@ backend and standard APIs on frontend? Which problems do they solve?
 Socket.io abstracts many transports, including AJAX long-polling and WebSockets, into a single API.
 It allows developers to send and receive data without worrying about cross-browser compatibility.
 
+Socket.io have a hierarchy of its own, so when websocket fails, it goes back to long or short polling.
+
 Socket.IO simplifies the WebSocket API and unifies the APIs of its fallback transports. Transports include:
 
 WebSocket
