@@ -1,15 +1,30 @@
 Name attributes of HTTP protocol makes it difficult to use for real time systems.
+Bi-directional: HTTP is a uni-directional protocol where a request is always initiated by client,
+server processes and returns a response, and then the client consumes it.
+
+Full-duplex: HTTP allows the request message to go from client to server and then server sends a response message to the client.
+At a given time, either client is talking to server or server is talking to client.
+
+Single TCP Connection: Typically a new TCP connection is initiated for a HTTP request and terminated after the response is received.
+A new TCP connection need to be established for another HTTP request/response.
 
 
 Explain polling and long-polling strategies, their pros and cons.
 Polling:
-Basically AJAX, using XmlHttpRequest.
+Web applications were originally developed around a client/server model, where the Web client is always the initiator of transactions,
+requesting data from the server. Thus, there was no mechanism for the server to independently send, or push, data to the client
+without the client first making a request.
+
+Pros: simpler, not server consuming (if the time between requests is long).
+Cons: bad if you need to be notified WHEN the server event happens with no delay.
 
 Long-polling:
 Client application (browser) sends a request with event recipient id, and current state to the server via HTTP.
 It creates a process, which repeatedly checks DB until the state is changed in there. When the state eventually changed,
 the client gets the server response and sends next request to the server.
 
+Pros: you are notified WHEN the server event happens with no delay.
+Cons: more complex and more server resources used.
 
 What is HTTP streaming, SSE (Server sent events)?
 
@@ -72,12 +87,11 @@ JSONP polling
 
 Explain the pros & cons of using a Backend as a Service Provider like Firebase.
 Pros:
-It lets you create cool realtime apps where the data changes frequently and those modifications
-are broadcast to all the connected users.
-Cross Platform API
-Three way binding feature
+It lets you create realtime apps where the data changes frequently and those modifications are broadcast to all the connected users.
+Cross Platform API.
+Three way binding feature.
 Stored in the cloud so readily available everywhere.
-Data stored in JSON
+Data stored in JSON.
 
 Cons:
 Limited to 50 Connections and 100mb of Storage (Free edition)
