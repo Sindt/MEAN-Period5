@@ -31,6 +31,8 @@ angular.module('myApp', [])
 
         self.messages = [];
 
+        self.users = [];
+
         self.sendMessage = function () {
             socket.emit('message', {
                 message: self.messageInput
@@ -38,10 +40,22 @@ angular.module('myApp', [])
             self.messageInput = '';
         };
 
+        self.newUser = function () {
+            console.log(self.user)
+            socket.emit('newUser', {
+                body: self.user
+            });
+        }
+
         socket.on('message', function (message) {
 
             self.messages.push({
                 body: message
             });
         });
+
+        socket.on('newUser', function (user) {
+            self.users.push(user);
+        })
+
     });

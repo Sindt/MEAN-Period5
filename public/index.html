@@ -7,8 +7,10 @@
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
 </head>
@@ -20,21 +22,40 @@
 
 </header>
 <main class="container">
-    <ul class="messages">
-        <li class="message" ng-repeat="message in main.messages"  duration="500">
-            <p>{{message.body}}</p>
-        </li>
-    </ul>
-    <form ng-submit="main.sendMessage()">
-        <div class="ten columns input-message">
-            <input type="text" ng-model="main.messageInput">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="well">
+                <h3>Users:</h3>
+                <ul class="list-group">
+                    <li ng-repeat="user in main.users" duration="500">
+                        <p>{{user.body}}</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="two columns">
-            <button class="button-primary">Send</button>
+
+        <div class="col-sm-8">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="message in main.messages" duration="500">
+                    <p>{{message.body.message}}</p>
+                </li>
+            </ul>
+            <form ng-submit="main.sendMessage()">
+                <input type="text" placeholder="Enter Message" ng-model="main.messageInput">
+                <div class="two columns">
+                    <button class="btn btn-primary">Send</button>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+    <div class="col-sm-4">
+
+        <form ng-submit="main.newUser()">
+            <label>Enter username:</label>
+            <input type="text" ng-model="main.user">
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
 </main>
-
-
 </body>
 </html>
