@@ -8,7 +8,7 @@ At a given time, either client is talking to server or server is talking to clie
 
 Single TCP Connection: Typically a new TCP connection is initiated for a HTTP request and terminated after the response is received.
 A new TCP connection need to be established for another HTTP request/response.
-
+-------------------------------------------------------------------------------------------
 
 Explain polling and long-polling strategies, their pros and cons.
 Polling:
@@ -26,7 +26,7 @@ the client gets the server response and sends next request to the server.
 
 Pros: you are notified WHEN the server event happens with no delay.
 Cons: more complex and more server resources used.
-
+-----------------------------------------------------------------------------
 
 What is HTTP streaming, SSE (Server sent events)?
 
@@ -36,7 +36,7 @@ SSEs open a single unidirectional channel between server and client.
 
 SSEs are sent over traditional HTTP. That means they do not require a special protocol or server implementation to get working.
 WebSockets on the other hand, require full-duplex connections and new Web Socket servers to handle the protocol.
-
+--------------------------------------------------------------------------------
 
 What is WebSocket protocol, how is it different from HTTP communication, what advantages it has over HTTP?
 
@@ -51,7 +51,7 @@ Bandwidth in decreasing efficiency:
 WebSockets: connection setup handshake and a few bytes per frame
 HTTP long-poll: connection for every message
 HTTP poll: connection for every message + no data messages
-
+--------------------------------------------------------------------------------
 
 Explain what the WebSocket Protocol brings to the Web-world.
 WebSockets provide a persistent connection between a client and server that both parties can use to start sending data at any time.
@@ -64,13 +64,13 @@ With WebSockets you can transfer as much data as you like without incurring the 
 Data is transferred through a WebSocket as messages, each of which consists of one or more frames containing the data you are sending (the payload).
 In order to ensure the message can be properly reconstructed when it reaches the client each frame is prefixed with 4-12 bytes of data about the payload.
 Using this frame-based messaging system helps to reduce the amount of non-payload data that is transferred, leading to significant reductions in latency.
-
+--------------------------------------------------------------------------------
 
 Explain and demonstrate the process of WebSocket communication - From connecting client to server,
 through sending messages, to closing connection.
 
 See public/app.js
-
+--------------------------------------------------------------------------------
 
 What's the advantage of using libraries like Socket.IO, Sock.JS, WS, over pure WebSocket libraries in the
 backend and standard APIs on frontend? Which problems do they solve?
@@ -88,7 +88,7 @@ AJAX long-polling
 AJAX multipart streaming
 IFrame
 JSONP polling
-
+--------------------------------------------------------------------------------
 
 Explain the pros & cons of using a Backend as a Service Provider like Firebase.
 Pros:
@@ -112,3 +112,4 @@ But if you use FireBase as a backend, you empower yourself with a three way bind
 You can basically bind your model data to a FireBase location so that whenever your models change,
 those changes are automatically pushed to FireBase.
 Similarly, whenever the data at the particular FireBase location changes, your local scope model is also updated.
+--------------------------------------------------------------------------------
