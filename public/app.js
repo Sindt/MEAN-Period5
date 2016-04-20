@@ -45,7 +45,8 @@ angular.module('myApp', [])
             socket.emit('newUser', {
                 body: self.user
             });
-        }
+            self.user = "";
+        };
 
         socket.on('message', function (message) {
 
